@@ -8,22 +8,25 @@ LOG = logger.get_root_logger(
     __name__, filename=os.path.join(ROOT_PATH, 'output.log'))
 
 
-
 @app.route('/user', methods=['GET', 'POST', 'DELETE', 'PATCH'])
 def user():
-    if request.method == 'GET':
-        query = request.args
+    print("request", request.method)
+    # if request.method == 'GET':
+    #     query = request.args
+    #     print("args", request.args)
+    #     data = listings.find_one(query)
+    #     return jsonify(data), 200
+    # data = request.get_json(force=True)
+    if request.method == 'POST':
+        print("reach", request.form.to_dict())
+        query = request.form.to_dict()
+        query.pop('submitType')
+        print("query", query)
         data = listings.find_one(query)
         return jsonify(data), 200
-    print("request", request.method)
-
-    data = request.get_json(force=True)
-    if request.method == 'POST':
-        if data.get('name', None) is not None and data.get('email', None) is not None:
-            listings.insert_one(data)
-            return jsonify({'ok': True, 'message': 'User created successfully!'}), 200
-        else:
-            return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
+        #     return jsonify({'ok': True, 'message': 'User created successfully!'}), 200
+        # else:
+        #     return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
 
     if request.method == 'DELETE':
         if data.get('email', None) is not None:
