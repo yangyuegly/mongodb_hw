@@ -1,77 +1,94 @@
-var DynamicSearch = React.createClass({
-  // sets initial state
-  getInitialState: function() {
-    return { searchString: "" };
-  },
+// import { PIL } from "Image";
+// import { WordCloud, STOPWORDS, ImageColorGenerator } from "wordcloud";
+// import pyplot from "matplotlib";
 
-  // sets state, triggers render method
-  handleChange: function(event) {
-    // grab value form input box
-    this.setState({ searchString: event.target.value });
-    console.log("scope updated!");
-  },
+let formElem = document.getElementById("query-form");
+let formElem2 = document.getElementById("histogram-form");
 
-  render: function() {
-    var countries = this.props.items;
-    var searchString = this.state.searchString.trim().toLowerCase();
+formElem.onsubmit = async (e) => {
+  e.preventDefault();
 
-    // filter countries list by value from input box
-    if (searchString.length > 0) {
-      countries = countries.filter(function(country) {
-        return country.name.toLowerCase().match(searchString);
-      });
-    }
+  let response = await fetch("/user", {
+    method: "POST",
+    body: new FormData(formElem),
+  });
+  let result = await response.json();
 
-    return (
-      <div>
-        <input
-          type="text"
-          value={this.state.searchString}
-          onChange={this.handleChange}
-          placeholder="Search!"
-        />
-        <ul>
-          {countries.map(function(country) {
-            return <li>{country.name} </li>;
-          })}
-        </ul>
-      </div>
-    );
-  },
-});
+  // var chart = anychart.tagCloud(result);
+  var chart = anychart.tagCloud();
+  console.log(result);
+  chart.data(result, {
+    mode: "byWord",
+    maxItems: 100,
+    ignoreItems: [
+      "the",
+      "and",
+      "he",
+      "or",
+      "of",
+      "in",
+      "you",
+      "for",
+      "with",
+      "at",
+      "have",
+      "its",
+      "one",
+      "my",
+      "there",
+      "e",
+      "to",
+      "a",
+      "is",
+      "are",
+      "on",
+      "from",
+      "we",
+      "this",
+      "all",
+      "as",
+      "it",
+      "if",
+      "but",
+      "1",
+      "5",
+      "that",
+      "house",
+      "2",
+      "has",
+    ],
+  });
+  // set a chart title
+  chart.title("The most frequently appeared words in a summary of a house");
+  // set an array of angles at which the words will be laid out
+  // enable a color range
+  chart.colorRange(false);
+  chart.angles([0, -45, 90]);
 
-// list of countries, defined with JavaScript object literals
-var countries = [
-  { name: "Sweden" },
-  { name: "China" },
-  { name: "Peru" },
-  { name: "Czech Republic" },
-  { name: "Bolivia" },
-  { name: "Latvia" },
-  { name: "Samoa" },
-  { name: "Armenia" },
-  { name: "Greenland" },
-  { name: "Cuba" },
-  { name: "Western Sahara" },
-  { name: "Ethiopia" },
-  { name: "Malaysia" },
-  { name: "Argentina" },
-  { name: "Uganda" },
-  { name: "Chile" },
-  { name: "Aruba" },
-  { name: "Japan" },
-  { name: "Trinidad and Tobago" },
-  { name: "Italy" },
-  { name: "Cambodia" },
-  { name: "Iceland" },
-  { name: "Dominican Republic" },
-  { name: "Turkey" },
-  { name: "Spain" },
-  { name: "Poland" },
-  { name: "Haiti" },
-];
+  // set the color range length
+  chart.colorRange().length("80%");
+  // display the word cloud chart
+  chart.container("container");
+  chart.draw();
+  // let wordcloud = WordCloud().generate(result);
+};
 
-ReactDOM.render(
-  <DynamicSearch items={countries} />,
-  document.getElementById("main")
-);
+formElem2.onsubmit = async (e) => {
+  e.preventDefault();
+  let response = await fetch("/user", {
+    method: "POST",
+    body: new FormData(formElem2),
+  });
+
+  var x = [];
+  for (var i = 0; i < 500; i++) {
+    x[i] = Math.random();
+  }
+
+  var trace = {
+    x: x,
+    type: "histogram",
+  };
+  var data = [trace];
+  Plotly.newPlot("histogram-div", data);
+};
