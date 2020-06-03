@@ -4,7 +4,10 @@
     <script src="https://unpkg.com/react@16.4.1/umd/react.production.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
     <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
 
     <script src="https://unpkg.com/react-dom@16.4.1/umd/react-dom.production.min.js"></script>
     <meta charset="utf-8" />
@@ -18,23 +21,54 @@
       rel="stylesheet"
     />
   </head>
-
+  <style>
+    body {
+      background: lightblue url("./static/house.jpg") no-repeat;
+      background-size: 100% 100%;
+    }
+  </style>
   <body>
-    <h1>Welcome to mongodb hw</h1>
+    <h1>Explore mongodb with airbnb dataset</h1>
+    <input type="submit" id="find-price" value="Find Average Price" />
+
     <form id="query-form">
+      <!-- <label for="property_type">Property Type:</label><br /> -->
+      <!-- <input type="text" id="property_type" name="property_type" /><br /> -->
+      <label for="amenities">Amenities:</label><br />
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+      <label for="Internet"> Internet</label><br />
+      <input type="checkbox" id="Internet" name="Internet" value="Internet" />
+      <label for="Wifi"> Wifi</label><br />
+      <input type="checkbox" id="Wifi" name="Wifi" value="Wifi" />
+      <label for="Air conditioning">Air conditioning</label><br />
+      <input
+        type="checkbox"
+        id="Air conditioning"
+        name="Air conditioning"
+        value="Air conditioning"
+      />
+      <label for="Kitchen">Kitchen</label><br />
+      <input type="checkbox" id="Kitchen" name="Kitchen" value="Kitchen" />
+      <label for="Heating">Heating</label><br />
+      <input type="checkbox" id="Heating" name="Heating" value="Heating" />
+      <label for="Smoke detector">Smoke detector</label><br />
+      <input
+        type="checkbox"
+        id="Smoke detector"
+        name="Smoke detector"
+        value="Smoke detector"
+      />
+
+      <input type="submit" name="submitType" value="Show Wordcloud" />
+      <input type="submit" name="submitType" value="Show Histogram" />
+    </form>
+    <!-- <form id="histogram-form">
       <label for="property_type">Property Type:</label><br />
       <input type="text" id="property_type" name="property_type" /><br />
       <label for="cancellation_policy">Cancellation Policy:</label><br />
       <input type="text" id="cancellation_policy" name="cancellation_policy" />
-      <input type="submit" name="submitType" value="Search" />
-    </form>
-    <form id="histogram-form">
-      <label for="property_type">Property Type:</label><br />
-      <input type="text" id="property_type" name="property_type" /><br />
-      <label for="cancellation_policy">Cancellation Policy:</label><br />
-      <input type="text" id="cancellation_policy" name="cancellation_policy" />
-      <input type="submit" name="submitType" value="Search" />
-    </form>
+      <input type="submit" name="submit-button-2" value="Show Histogram" />
+    </form> -->
     <style>
       html,
       body,
@@ -46,18 +80,6 @@
       }
     </style>
     <div id="container"></div>
-    <style>
-      html,
-      body,
-      #histogram-div {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-
-    <div id="histogram-div"></div>
 
     <!-- <form action="/user" method="get">
       <input type="text" name="projectFilepath" />

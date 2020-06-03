@@ -4,11 +4,34 @@ import pandas as pd
 from flask import request, jsonify, render_template
 from app import app, listings
 import logger
-from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 
 ROOT_PATH = os.environ.get('ROOT_PATH')
 LOG = logger.get_root_logger(
     __name__, filename=os.path.join(ROOT_PATH, 'output.log'))
+
+
+@app.route('/country', methods=['POST'])
+def country_price():
+    # country = request.form.to_dict()
+    # all_listing_in_country = listings.find(
+    #     country, projection={"_id": False, "price": True})
+    all_listing_in_country = listings.aggregate([{
+        "$group": {
+            "_id": "$address.country",
+            "mean_price": {
+                "$avg": "$price"
+            }
+        }
+    }])
+    all_listing_in_country = list(all_listing_in_country)
+    keys = []
+    vals = []
+    for c in all_listing_in_country:
+        print(c["_id"])
+        keys.append(c["_id"])
+        vals.append(c["mean_price"])
+    res = dict(zip(keys, vals))
+    return jsonify(res)
 
 
 @app.route('/user', methods=['GET', 'POST', 'DELETE', 'PATCH'])
@@ -22,17 +45,22 @@ def user():
     # data = request.get_json(force=True)
     res = ""
     if request.method == 'POST':
-        print("reach", request.form.to_dict())
         query = request.form.to_dict()
+        conditions = []
+        for key in query.keys():
+            conditions.append(key)
         # query.pop('submitType')
+        print("summary!!!!!:", conditions)
+        summary = listings.find({"amenities": {"$all": conditions}})
+
+        # query =
         print("query", query)
-        summary = listings.find(query, limit=200, projection={
-                                '_id': False, 'summary': True})
+        # summary = listings.find({"ameni": {"$all": ["red", "blank"]}}, limit=200)
         df = pd.DataFrame(list(summary))
         text = df['summary'].tolist()
         for item in text:
             res = res + item + " "
-        return jsonify(res), 200
+            return jsonify(res), 200
         #     return jsonify({'ok': True, 'message': 'User created successfully!'}), 200
         # else:
         #     return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
