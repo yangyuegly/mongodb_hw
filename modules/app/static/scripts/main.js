@@ -52,14 +52,20 @@ formElem.onsubmit = async (e) => {
   });
   let result = await response.json();
   var activeElement = document.activeElement;
+  let data = [];
+  Object.keys(result).forEach(function(key) {
+    let curr = {};
+    curr["x"] = key;
+    curr["value"] = result[key];
+    data.push(curr);
+  });
 
   var val = activeElement.value;
   console.log(val);
   if (val == "Show Wordcloud") {
     // var chart = anychart.tagCloud(result);
     var chart = anychart.tagCloud();
-    console.log(result);
-    chart.data(result, {
+    chart.data(data, {
       mode: "byWord",
       maxItems: 100,
       ignoreItems: [
@@ -118,15 +124,16 @@ formElem.onsubmit = async (e) => {
   } else if (val == "Show Histogram") {
     document.getElementById("container").innerHTML = null;
 
-    let x = result;
-    x = x.split(" ");
-    let freqMap = {};
-    x.forEach(function(w) {
-      if (!freqMap[w]) {
-        freqMap[w] = 0;
-      }
-      freqMap[w]++;
-    });
+    let freqMap = result;
+    console.log(result);
+    // x.forEach(function(w) {
+    //   if (typeof w != "number") {
+    //     if (!freqMap[w]) {
+    //       freqMap[w] = 0;
+    //     }
+    //     freqMap[w]++;
+    //   }
+    // });
     // var trace = {
     //   x: freqMap.keys(),
     //   y: freqMap.values(),
@@ -187,7 +194,7 @@ formElem.onsubmit = async (e) => {
           .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
           .replace(/\s+/g, " ");
         if (!stop.includes(key)) {
-          console.log("reached:" + key);
+          // console.log("reached:" + key);
           data.addRow([key.toString(), value]);
         }
       }

@@ -4,6 +4,7 @@ import pandas as pd
 from flask import request, jsonify, render_template
 from app import app, listings
 import logger
+import re
 
 ROOT_PATH = os.environ.get('ROOT_PATH')
 LOG = logger.get_root_logger(
@@ -51,16 +52,36 @@ def user():
             conditions.append(key)
         # query.pop('submitType')
         print("summary!!!!!:", conditions)
+
         summary = listings.find({"amenities": {"$all": conditions}})
 
-        # query =
-        print("query", query)
+        summary = list(summary)
+        # print("result!!!", summary)
         # summary = listings.find({"ameni": {"$all": ["red", "blank"]}}, limit=200)
-        df = pd.DataFrame(list(summary))
+        df = pd.DataFrame(summary)
+        # print('dataf!rame', df['summary'].tolist())
         text = df['summary'].tolist()
+        # res = []
+        freqMap = {}
         for item in text:
-            res = res + item + " "
-            return jsonify(res), 200
+            curr = item.split(" ")
+            for c in curr:
+                c = re.sub(r'[^\w]', ' ', c)
+                c = c.lower()
+                if c.isnumeric() or len(c) <= 3:
+                    continue
+                else:
+                    freqMap[c] = freqMap.get(c, 0) + 1
+        freqMap = {k: v for k, v in sorted(
+            freqMap.items(), key=lambda x: x[1], reverse=True)}
+        toRemove = list(freqMap)[400:]
+        for r in toRemove:
+            del freqMap[r]
+
+        for stop in ['with', 'this', 'where', 'there', 'from', 'also', 'just']:
+            del freqMap[stop]
+        print(freqMap)
+        return jsonify(freqMap), 200
         #     return jsonify({'ok': True, 'message': 'User created successfully!'}), 200
         # else:
         #     return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
