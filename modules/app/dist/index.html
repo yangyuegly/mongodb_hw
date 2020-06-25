@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://unpkg.com/react@16.4.1/umd/react.production.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
-    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+
     <script
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
@@ -30,46 +28,14 @@
   <body>
     <h1>Explore mongodb with airbnb dataset</h1>
 
-    <form id="query-form">
-      <!-- <label for="property_type">Property Type:</label><br /> -->
-      <!-- <input type="text" id="property_type" name="property_type" /><br /> -->
-      <label for="amenities">Amenities:</label></br>
-      <label for="Internet"> Internet</label>
-      <input type="checkbox" id="Internet" name="Internet" value="Internet" /><br />
-      <label for="Wifi"> Wifi</label>
-      <input type="checkbox" id="Wifi" name="Wifi" value="Wifi" /><br />
-      <label for="Air conditioning">Air conditioning</label>
-      <input
-        type="checkbox"
-        id="Air conditioning"
-        name="Air conditioning"
-        value="Air conditioning"
-      /><br />
-      <label for="Kitchen">Kitchen</label>
-      <input type="checkbox" id="Kitchen" name="Kitchen" value="Kitchen" /><br />
-      <label for="Heating">Heating</label>
-      <input type="checkbox" id="Heating" name="Heating" value="Heating" /><br />
-      <label for="Smoke detector">Smoke detector</label>
-      <input
-        type="checkbox"
-        id="Smoke detector"
-        name="Smoke detector"
-        value="Smoke detector"
-      /><br />
-
-      <input type="submit" name="submitType" value="Show Wordcloud" />
-      <input type="submit" name="submitType" value="Show Histogram" />
-    </form>
+    <img src='./static/wordCloud.png'></img>
     <br></br>
-    <input type="submit" id="find-price" value="Find Average Price" />
 
-    <!-- <form id="histogram-form">
-      <label for="property_type">Property Type:</label><br />
-      <input type="text" id="property_type" name="property_type" /><br />
-      <label for="cancellation_policy">Cancellation Policy:</label><br />
-      <input type="text" id="cancellation_policy" name="cancellation_policy" />
-      <input type="submit" name="submit-button-2" value="Show Histogram" />
-    </form> -->
+    <img src='./static/pricePlot.png'></img>
+
+    <br></br>
+
+
     <style>
       html,
       body,
@@ -82,10 +48,6 @@
     </style>
     <div id="container"></div>
 
-    <!-- <form action="/user" method="get">
-      <input type="text" name="projectFilepath" />
-      <input type="submit" />
-    </form> -->
   </body>
-  <script src="../static/scripts/main.js"></script>
+  <!-- <script src="../static/scripts/main.js"></script> -->
 </html>

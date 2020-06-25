@@ -161,3 +161,112 @@
 2020-06-13 16:24:31,036 - root - INFO - running environment: development
 2020-06-13 16:24:51,356 - root - INFO - running environment: development
 2020-06-13 16:27:05,382 - root - INFO - running environment: development
+2020-06-25 18:36:40,040 - root - INFO - running environment: development
+2020-06-25 18:36:41,877 - root - INFO - running environment: development
+2020-06-25 19:42:56,428 - root - INFO - running environment: development
+2020-06-25 19:48:33,496 - root - INFO - running environment: development
+2020-06-25 19:49:01,703 - root - INFO - running environment: development
+2020-06-25 19:49:05,191 - root - INFO - running environment: development
+2020-06-25 19:49:14,836 - root - INFO - running environment: development
+2020-06-25 19:49:20,626 - root - INFO - running environment: development
+2020-06-25 19:49:47,961 - root - INFO - running environment: development
+2020-06-25 19:53:34,332 - root - INFO - running environment: development
+2020-06-25 19:53:35,182 - root - INFO - running environment: development
+2020-06-25 19:57:08,724 - root - INFO - running environment: development
+2020-06-25 19:58:31,952 - root - INFO - running environment: development
+2020-06-25 20:00:04,937 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 20:01:04,403 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 20:02:16,434 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 20:03:21,494 - root - INFO - running environment: development
+2020-06-25 20:04:45,904 - root - INFO - running environment: development
+2020-06-25 20:08:18,126 - root - INFO - running environment: development
+2020-06-25 20:14:37,418 - root - INFO - running environment: development
+2020-06-25 20:14:38,410 - root - INFO - running environment: development
+2020-06-25 20:17:41,505 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 20:19:24,349 - root - INFO - running environment: development
+2020-06-25 20:19:25,351 - root - INFO - running environment: development
+2020-06-25 20:19:45,499 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 20:24:55,630 - root - INFO - running environment: development
+2020-06-25 20:25:45,655 - root - INFO - running environment: development
+2020-06-25 20:26:47,976 - root - INFO - running environment: development
+2020-06-25 20:28:11,146 - root - INFO - running environment: development
+2020-06-25 20:28:53,222 - root - INFO - running environment: development
+2020-06-25 20:30:33,269 - root - INFO - running environment: development
+2020-06-25 20:33:59,867 - root - INFO - running environment: development
+2020-06-25 20:35:09,645 - root - INFO - running environment: development
+2020-06-25 20:35:10,683 - root - INFO - running environment: development
+2020-06-25 20:50:31,612 - root - INFO - running environment: development
+2020-06-25 20:51:55,151 - root - INFO - running environment: development
+2020-06-25 20:53:40,922 - root - INFO - running environment: development
+2020-06-25 20:54:16,463 - root - INFO - running environment: development
+2020-06-25 20:55:59,040 - root - INFO - running environment: development
+2020-06-25 20:56:37,635 - root - INFO - running environment: development
+2020-06-25 20:57:23,549 - root - INFO - running environment: development
+2020-06-25 20:58:25,862 - root - INFO - running environment: development
+2020-06-25 20:58:32,407 - root - INFO - running environment: development
+2020-06-25 20:58:43,348 - root - INFO - running environment: development
+2020-06-25 21:00:58,388 - root - INFO - running environment: development
+2020-06-25 21:01:56,994 - root - INFO - running environment: development
+2020-06-25 21:04:29,765 - root - INFO - running environment: development
+2020-06-25 21:05:10,391 - root - INFO - running environment: development
+2020-06-25 21:06:46,143 - root - INFO - running environment: development
+2020-06-25 21:06:50,637 - root - INFO - running environment: development
+2020-06-25 21:06:53,777 - root - INFO - running environment: development
+2020-06-25 21:08:51,379 - root - INFO - running environment: development
+2020-06-25 21:09:01,192 - root - INFO - running environment: development
+2020-06-25 21:09:34,993 - root - INFO - running environment: development
+2020-06-25 21:12:23,246 - root - INFO - running environment: development
+2020-06-25 21:12:24,393 - root - INFO - running environment: development
+2020-06-25 21:12:42,554 - root - INFO - running environment: development
+2020-06-25 21:12:46,409 - root - INFO - running environment: development
+2020-06-25 21:13:46,857 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 21:13:46,937 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 22:13:34,219 - root - INFO - running environment: development
+2020-06-25 22:13:44,899 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 22:14:15,516 - root - INFO - running environment: development
+2020-06-25 22:16:12,429 - root - INFO - running environment: development
+2020-06-25 22:17:20,246 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 22:20:48,712 - root - INFO - running environment: development
+2020-06-25 22:21:04,845 - root - INFO - running environment: development
+2020-06-25 22:22:13,510 - root - INFO - running environment: development
+2020-06-25 22:45:41,559 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 22:46:15,362 - root - INFO - running environment: development
+2020-06-25 22:46:43,824 - root - INFO - running environment: development
+2020-06-25 22:50:04,830 - root - INFO - running environment: development
+2020-06-25 22:50:27,201 - root - INFO - running environment: development
+2020-06-25 22:50:54,297 - root - INFO - running environment: development
+2020-06-25 22:51:06,782 - root - INFO - running environment: development
+2020-06-25 22:52:38,563 - root - INFO - running environment: development
+2020-06-25 22:52:48,848 - root - INFO - running environment: development
+2020-06-25 22:53:04,263 - root - INFO - running environment: development
+2020-06-25 22:55:12,889 - root - INFO - running environment: development
+2020-06-25 22:55:42,889 - root - INFO - running environment: development
+2020-06-25 22:58:12,528 - root - INFO - running environment: development
+2020-06-25 22:59:54,706 - root - INFO - running environment: development
+2020-06-25 23:00:00,881 - root - INFO - running environment: development
+2020-06-25 23:00:17,258 - root - INFO - running environment: development
+2020-06-25 23:00:37,358 - root - INFO - running environment: development
+2020-06-25 23:00:55,625 - root - INFO - running environment: development
+2020-06-25 23:01:38,802 - root - INFO - running environment: development
+2020-06-25 23:02:53,538 - root - INFO - running environment: development
+2020-06-25 23:11:23,637 - root - INFO - running environment: development
+2020-06-25 23:12:04,019 - root - INFO - running environment: development
+2020-06-25 23:13:08,224 - root - INFO - running environment: development
+2020-06-25 23:14:22,183 - root - INFO - running environment: development
+2020-06-25 23:14:43,830 - root - INFO - running environment: development
+2020-06-25 23:14:53,701 - root - INFO - running environment: development
+2020-06-25 23:16:10,881 - root - INFO - running environment: development
+2020-06-25 23:16:48,111 - root - INFO - running environment: development
+2020-06-25 23:18:18,587 - root - INFO - running environment: development
+2020-06-25 23:18:35,900 - root - INFO - running environment: development
+2020-06-25 23:19:29,652 - root - INFO - running environment: development
+2020-06-25 23:19:38,836 - root - INFO - running environment: development
+2020-06-25 23:19:46,073 - root - INFO - running environment: development
+2020-06-25 23:19:46,096 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 23:20:34,503 - root - INFO - running environment: development
+2020-06-25 23:20:57,146 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 23:22:30,844 - root - INFO - running environment: development
+2020-06-25 23:23:41,384 - root - INFO - running environment: development
+2020-06-25 23:23:42,409 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 23:23:43,694 - root - ERROR - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2020-06-25 23:24:14,640 - root - INFO - running environment: development
